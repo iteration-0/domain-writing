@@ -47,7 +47,7 @@ $(OUTPUT_DIRNAME)/$(DOC_FILENAME).html: header.html $(DOC_FILES) $(FIGURE_FILES)
 endif
 
 publish:
-	mkdir -p $(PUBLISH_DIRNAME)/ && mkdir -p $(PUBLISH_DIRNAME)/img \
+	mkdir -p $(PUBLISH_DIRNAME)/ && mkdir -p $(PUBLISH_DIRNAME)/img && \
 	cp ./CNAME ./$(PUBLISH_DIRNAME)/CNAME && \
 	cp ./img ./$(PUBLISH_DIRNAME)/img && \
 	cp ./$(OUTPUT_DIRNAME)/$(DOC_FILENAME).html ./$(PUBLISH_DIRNAME)/index.html
