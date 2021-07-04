@@ -12,4 +12,13 @@ Publish
 $ git push 
 ```
 
-### site：https://sunwei.xyz
+Use GitHub pages with customized domain for our writing.
+
+### Secrets configuration
+For github actions.
+
+1. Apply token: https://github.com/settings/tokens
+2. Refer to ./settings/secrets/actions, fill token with name: "GHP_TOKEN"
+3. Custom domain: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+Done!
