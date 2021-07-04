@@ -49,7 +49,7 @@ endif
 publish:
 	mkdir -p $(PUBLISH_DIRNAME)/ && mkdir -p $(PUBLISH_DIRNAME)/img && \
 	cp ./CNAME ./$(PUBLISH_DIRNAME)/CNAME && \
-	cp ./img ./$(PUBLISH_DIRNAME)/img && \
+	cp -ap img/ ./$(PUBLISH_DIRNAME)/img/ && \
 	cp ./$(OUTPUT_DIRNAME)/$(DOC_FILENAME).html ./$(PUBLISH_DIRNAME)/index.html
 
 .PHONY: \
