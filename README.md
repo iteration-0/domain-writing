@@ -14,7 +14,7 @@ $ git push
 
 Use GitHub pages with customized domain for our writing.
 
-### Secrets configuration
+### Publish site with github actions
 For github actions.
 
 1. Apply token: https://github.com/settings/tokens
