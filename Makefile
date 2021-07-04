@@ -40,16 +40,16 @@ $(OUTPUT_DIRNAME)/$(DOC_FILENAME).html: $(DOC_FILES) $(FIGURE_FILES)
 	$(error cannot build $@ without either pandoc or docker)
 else
 $(OUTPUT_DIRNAME)/$(DOC_FILENAME).html: header.html $(DOC_FILES) $(FIGURE_FILES)
-	@mkdir -p $(OUTPUT_DIRNAME)/ && mkdir -p $(OUTPUT_DIRNAME)/img/ && \
-	cp -ap img/ $(shell pwd)/$(OUTPUT_DIRNAME)/img/ && \
+	@mkdir -p $(OUTPUT_DIRNAME)/ && \
+    cp -R img $(shell pwd)/$(OUTPUT_DIRNAME)/ && \
 	$(PANDOC) -f markdown_github -t html5 -H $(PANDOC_SRC)header.html --standalone -o $(PANDOC_DST)$@ $(patsubst %,$(PANDOC_SRC)%,$(DOC_FILES))
 	ls -sh $(realpath $@)
 endif
 
 publish:
-	mkdir -p $(PUBLISH_DIRNAME)/ && mkdir -p $(PUBLISH_DIRNAME)/img && \
+	mkdir -p $(PUBLISH_DIRNAME)/ && \
 	cp ./CNAME ./$(PUBLISH_DIRNAME)/CNAME && \
-	cp -ap img/ ./$(PUBLISH_DIRNAME)/img/ && \
+	cp -R img ./$(PUBLISH_DIRNAME)/ && \
 	cp ./$(OUTPUT_DIRNAME)/$(DOC_FILENAME).html ./$(PUBLISH_DIRNAME)/index.html
 
 .PHONY: \
